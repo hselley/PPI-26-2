@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <script>
+        function obtener() {
+            valor = document.getElementById("numero").value;
+            var x = parseInt(valor);
+            console.log("Convertimos el String en Int");
+            console.log(x);
+            factorial(x);
+        }
+
+        function factorial(n) {
+            var f = 1;
+            for(i=1; i<=n; i++) {
+                f *= i;
+                console.log(f);
+            }
+            salida = n + "! = " + f;
+            document.getElementById("resultado").innerHTML = salida;
+        }
+
+        function borrar() {
+            document.getElementById("numero").value = "0";
+            document.getElementById("resultado").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Factorial Cíclico</h1>
+    <form action="">
+        <input type="number" id="numero" min="0" step="1">
+    </form>
+    <button onclick="obtener()">Calcular</button>
+    <button onclick="borrar()">Borrar</button>
+    <p id="resultado"></p>
+</body>
+</html>
